@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="robots" content="noindex">
+  <title>Redirecting…</title>
+  <meta http-equiv="refresh" content="0; url=/keymusecommerce/">
+  <script>
+    // Preserve path, query, and hash while avoiding redirect loops if already on /keymusecommerce
+    (function() {
+      var base = '/keymusecommerce';
+      var p = location.pathname || '/';
+      if (p.startsWith(base + '/') || p === base) {
+        // already inside the project path — nothing to do
+        return;
+      }
+      var newPath = base + (p === '/' ? '/' : p) + (location.search || '') + (location.hash || '');
+      // Use replace so browser history doesn't keep the redirect page
+      location.replace(newPath);
+    })();
+  </script>
+</head>
+<body>
+  Redirecting… If you are not redirected automatically, <a id="redir" href="/keymusecommerce/">click here</a>.
+</body>
+</html>
